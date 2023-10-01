@@ -1,1 +1,1 @@
-# This is a repository about data structure and basic algorithm
+# A repository about data structure and basic algorithm
