@@ -1,2 +1,5 @@
 #ignore floder about the vscode compiler
-/.vscode
+**/.vscode
+#ignore the bin and build directorires 
+**/bin
+**/build

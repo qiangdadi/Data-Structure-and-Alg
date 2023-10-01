@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../include/Tree.h"
+#include "tree.h"
 
 void Test01(){
     struct Node<int>* root = new Node<int>();

@@ -17,7 +17,7 @@ private:
 public:
     explicit Tree(Node<T>* root);// explict key word forbiden implicit conversions and  copy-initialization
     Node<T>* getRoot() const;
-    int insert(Node<T>* node) const;
+    int insert(Node<T>* parent, Node<T>* node);
 };
 
 template <class T>
@@ -36,6 +36,13 @@ Node<T>* Tree<T>::getRoot() const{
     1 no insertion error;
 */
 template <class T>
-int Tree<T>::insert(Node<T>* node) const {
+int Tree<T>::insert(Node<T>* parent, Node<T>* node){
+    if(!parent){
+        if(!this->root){
+            this->root = node;
+        }else{
+            
+        }
+    }
     return 0;
 }

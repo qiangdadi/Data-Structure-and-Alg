@@ -1,0 +1,23 @@
+#Set Minimum Required CMake version
+cmake_minimum_required(VERSION 3.27.0)
+
+#Set Compile Path
+set(CMAKE_CXX_COMPILER "D:/msys64/ucrt64/bin/g++.exe")
+set(CMAKE_C_COMPILER "D:/msys64/ucrt64/bin/gcc.exe")
+
+#Set the Project Name and Version
+project(Tree VERSION 1.0)
+
+#Set the Output Path
+set(EXECUTABLE_OUTPUT_PATH ../bin)
+
+#Search the files 
+file(GLOB_RECURSE SRC ./src/*.cpp)
+list(REMOVE_ITEM SRC ./src/tree.cpp)
+
+#Set the Include Path
+include_directories(./include)
+
+#Addd the executable
+add_executable(tree ${SRC})
+
