@@ -17,6 +17,7 @@
 #include <algorithm>
 #include <iostream>
 #include <string>
+#include "printlib.h"
 
 
 using std::swap;
@@ -57,32 +58,14 @@ void heapSort(vector<int>& arr){
     //build a heap
     buildMaxHeap(arr);
     int size = arr.size();
-    //swap the first node and the last node, than Pretend to delete the last node
+    //swap the first node and the last node, then Pretend to delete the last node
     for( int i = 0; i < size; i++){
         maxHeapfy(arr, 0, size-i-1);
         swap(arr[0], arr[size-i-1]);
     }
 }
 
-void printHeap(string prefix, vector<int>& arr, int cur, bool isLeft){
-    int size = arr.size();
-    cout << prefix;
-    cout << (isLeft ? "|--" : "|__" );
-    // print the value of the node
-    cout << arr[cur] << endl;
 
-    // enter the next tree level - left and right branch
-    if(2 * cur + 1 < size ){
-        printHeap( prefix + (isLeft ? "|   " : "    "), arr, 2*cur+1, true);
-    }
-    if(2*( cur + 1 ) < size ){
-        printHeap( prefix + (isLeft ? "|   " : "    "), arr, 2*(cur+1), false);
-    }
-}
-
-void printHeap(vector<int>& arr){
-    printHeap("", arr, 0, false);
-}
 
 //test the maxHeapy function 
 void testMaxHeapfy(){
