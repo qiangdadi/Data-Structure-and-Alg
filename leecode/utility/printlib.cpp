@@ -1,13 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <string>
 #include "printlib.h"
-
-using std::cout;
-using std::endl;
-using std::vector;
-using std::string;
-
 
 void printHeap(string prefix, vector<int>& arr, int cur, bool isLeft){
     int size = arr.size();
@@ -35,7 +26,7 @@ void printTree(string prefix, Node* root, bool isLeft){
     cout << prefix;
     cout << (isLeft ? "|--" : "|__" );
     // print the value of the node
-    cout << root->val<< endl;
+    cout << "<" << root->val << " , " << root->height << ">" << endl;
 
     printTree(prefix + (isLeft ? "|   " : "    "), root->lchild, true);
     printTree(prefix + (isLeft ? "|   " : "    "), root->rchild, false);
@@ -43,4 +34,5 @@ void printTree(string prefix, Node* root, bool isLeft){
 
 void printTree(Node* root){
     printTree("", root, false);
+    // cout << "print tree end\n";
 }
